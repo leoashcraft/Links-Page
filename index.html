@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Card</title>
+  <title>Leo Ashcraft - Software Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -24,10 +25,24 @@
           <a href="https://www.facebook.com/leoashcraft" class="fab fa-facebook-f"></a>
         </div>
         <i class="desc">Portfolio coming soon...</i>
-        <a href="#" class="contact-btn">Contact Me</a><br />
+        <button popovertarget="popover-one" class="contact-btn">
+          Contact Me
+        </button>
       </div>
     </div>
-    
+    <div class="overlay card-header" id="popover-one" popover="auto">
+      <button
+        class="btn btn-sm btn-danger btn-close"
+        popovertarget="popover-one"
+        popovertargetaction="hide">
+        X
+      </button>
+      <p class="text-center">
+        Phone: <span class="phone" data-user="(309)" data-website="2874-836"></span>
+        <br />
+        Email: <span class="email" data-user="oel" data-website="hcet.tfarchsa"></span>
+      </p>
+    </div>
     <div class='light x1'></div>
     <div class='light x2'></div>
     <div class='light x3'></div>

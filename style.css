@@ -271,8 +271,8 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-    opacity: 0.025; /* Adjust the opacity value to set the desired transparency */
-    z-index: 0; /* Ensure this pseudo-element is behind other content */
+    opacity: 0.025;
+    z-index: 0;
 }
 
 .profile-card {
@@ -281,7 +281,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  z-index: 2; /* Ensure profile card is above the animation */
+  z-index: 2;
 }
 
 .card-header {
@@ -354,6 +354,7 @@ body {
   display: inline-block;
   padding: 12px 50px;
   color: #71B7D5;
+  background:transparent;
   border: 2px solid #71B7D5;
   border-radius: 6px;
   margin: 16px 0;
@@ -362,11 +363,70 @@ body {
 
 .contact-btn:hover {
   background: #71B7D5;
-  color: #f2f2f2;
+  color: #2c3a47;
 }
 
 .border {
   width: 1px;
   height: 30px;
   background: #bbb;
+}
+
+[popover] {
+  background: linear-gradient(130deg, #71B7D5, #096B90);
+	color: #08171e;
+	font-weight: 400;
+	padding: 50px 40px 40px 40px;
+  border-radius: 8px;
+  border: 0;
+  min-width: 380px;
+	max-width: 80%;
+  min-height: 150px;
+	line-height: 1.4;
+	margin: auto auto;
+  z-index: 3;
+}
+
+[popover]::backdrop {
+	background-color: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(130deg, #2c3a47b2, #08171eb7);
+
+}
+
+.btn-close {
+	position: absolute;
+	right: 6px;
+	top: 10px;
+	line-height: 1;
+}
+
+/* Animating the popover in */
+/* IS-OPEN STATE */
+[popover]:popover-open {
+	translate: 0 0;
+}
+/* EXIT STATE */
+[popover] {
+	transition: translate 0.7s ease-out, overlay 0.7s ease-out,
+		display 0.7s ease-out allow-discrete;
+	translate: 0 -30rem;
+}
+
+/* BEFORE-OPEN STATE */
+@starting-style {
+	[popover]:popover-open {
+		translate: 0 -30rem;
+	}
+}
+
+.phone:before {
+  content: attr(data-website) "\0020" attr(data-user);
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+.email:before {
+  content: attr(data-website) "\0040" attr(data-user);
+  unicode-bidi: bidi-override;
+  direction: rtl;
 }
