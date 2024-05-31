@@ -362,8 +362,8 @@ body {
 }
 
 .contact-btn:hover {
-  background: #71B7D5;
-  color: #2c3a47;
+  background: linear-gradient(130deg, #71B7D5, #096B90);
+  color: #08171E;
 }
 
 .border {
